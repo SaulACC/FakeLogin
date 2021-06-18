@@ -1,0 +1,87 @@
+<form [formGroup]="marketForm">
+  <!--Main-->
+  <label>Main</label>
+  <input id="main" formControlName="main" type="text" class="form-control" placeholder="Add the main product.">
+  <div *ngIf="getControl.main.invalid && (getControl.main.dirty) || (getControl.main.touched)" class="alert alert-danger">
+    <div *ngIf="getControl.main.errors?.required">
+      It cannot be empty.
+    </div>
+    <div *ngIf="getControl.main.errors?.minLength">
+      Not enought characters.
+    </div>
+    <div *ngIf="getControl.main.errors?.maxLength">
+      Too much characters.
+    </div>
+  </div>
+    <!--Second prod-->
+    <label>Second product</label>
+    <input id="sec" formControlName="sec" type="text" class="form-control" placeholder="Add the second product.">
+    <div *ngIf="getControl.sec.invalid && (getControl.sec.dirty) || (getControl.sec.touched)" class="alert alert-danger">
+      <div *ngIf="getControl.sec.errors?.required">
+        It cannot be empty.
+      </div>
+      <div *ngIf="getControl.sec.errors?.minLength">
+        Not enought characters.
+      </div>
+      <div *ngIf="getControl.sec.errors?.maxLength">
+        Too much characters.
+      </div>
+    </div>
+      <!--Third prod-->
+      <label>Third product</label>
+      <input id="third" formControlName="third" type="text" class="form-control" placeholder="Add the third product.">
+      <div *ngIf="getControl.third.invalid && (getControl.third.dirty) || (getControl.third.touched)" class="alert alert-danger">
+        <div *ngIf="getControl.third.errors?.required">
+          It cannot be empty.
+        </div>
+        <div *ngIf="getControl.third.errors?.minLength">
+          Not enought characters.
+        </div>
+        <div *ngIf="getControl.third.errors?.maxLength">
+          Too much characters.
+        </div>
+      </div>
+      <!--Sector-->
+      <label>Sector</label>
+      <input id="sector" formControlName="main" type="text" class="form-control" placeholder="Add the sector.">
+      <div *ngIf="getControl.sector.invalid && (getControl.sector.dirty) || (getControl.sector.touched)" class="alert alert-danger">
+        <div *ngIf="getControl.sector.errors?.required">
+          It cannot be empty.
+        </div>
+        <div *ngIf="getControl.sector.errors?.minLength">
+          Not enought characters.
+        </div>
+        <div *ngIf="getControl.sector.errors?.maxLength">
+          Too much characters.
+        </div>
+      </div>
+    <!--Address-->
+    <label>Address</label>
+    <input id="address" formControlName="address" type="text" class="form-control" placeholder="Add the address.">
+    <div *ngIf="getControl.address.invalid && (getControl.address.dirty) || (getControl.address.touched)" class="alert alert-danger">
+      <div *ngIf="getControl.address.errors?.required">
+        It cannot be empty.
+      </div>
+      <div *ngIf="getControl.address.errors?.minLength">
+        Not enought characters.
+      </div>
+      <div *ngIf="getControl.address.errors?.maxLength">
+        Too much characters.
+      </div>
+    </div>
+      <!--telephone-->
+      <label>Telephone</label>
+      <input id="telephone" formControlName="telephone" type="text" class="form-control" placeholder="Add the telephone.">
+      <div *ngIf="getControl.telephone.invalid && (getControl.telephone.dirty) || (getControl.telephone.touched)" class="alert alert-danger">
+        <div *ngIf="getControl.telephone.errors?.required">
+          It cannot be empty.
+        </div>
+        <div *ngIf="getControl.telephone.errors?.minLength">
+          Not enought characters.
+        </div>
+        <div *ngIf="getControl.telephone.errors?.maxLength">
+          Too much characters.
+        </div>
+      </div>
+      <button (click)="onClick()" class="btn btn-primary">SUBMIT</button>
+</form>

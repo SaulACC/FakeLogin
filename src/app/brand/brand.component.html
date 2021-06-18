@@ -1,0 +1,36 @@
+<form [formGroup]="brandForm">
+  <!--Name-->
+  <label>Company name</label>
+  <input id="name" formControlName="name" type="text" class="form-control" placeholder="Add the full name of the brand.">
+  <div *ngIf="getControl.name.invalid && (getControl.name.dirty) || (getControl.name.touched)" class="alert alert-danger">
+    <div *ngIf="getControl.name.errors?.required">
+      Name cannot be empty.
+    </div>
+    <div *ngIf="getControl.name.errors?.minLength">
+      Not enought characters.
+    </div>
+    <div *ngIf="getControl.name.errors?.maxLength">
+      The company name exceeds the maximum number of characters.
+    </div>
+  </div>
+    <!--Corporative Email-->
+    <label>Company email</label>
+    <input id="corporativeEmail" formControlName="corporativeEmail" type="text" class="form-control" placeholder="Add the email.">
+    <div *ngIf="getControl.corporativeEmail.invalid && (getControl.corporativeEmail.dirty) || (getControl.corporativeEmail.touched)" class="alert alert-danger">
+      <div *ngIf="getControl.corporativeEmail.errors?.required">
+        Email cannot be empty.
+      </div>
+      <div *ngIf="getControl.corporativeEmail.errors?.minLength">
+        Not enought characters.
+      </div>
+    </div>
+      <!--SCHOOL-->
+      <label>Password</label>
+      <input id="password" formControlName="password" type="text" class="form-control" placeholder="Add password here.">
+      <div *ngIf="getControl.password.invalid && (getControl.password.dirty) || (getControl.password.touched)" class="alert alert-danger">
+        <div *ngIf="getControl.password.errors?.required">
+          Password cannot be empty.
+        </div>
+      </div>
+      <button (click)="onClick()" class="btn btn-primary">SUBMIT</button>
+</form>
